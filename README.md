@@ -19,10 +19,10 @@
 ## Screenshots
 
 ### Setup Page on Phone
-![Setup Page on Phone](assets/setup_portal_phone.png)
+![Setup Page on Phone](https://raw.githubusercontent.com/mccdz1/BCA188-Lab9-ESP32-WiFi-Manager/07c9029853aa3eb5aff6ca4a8f6ff909868b004b/assets/setup_portal_phone.png)
 
 ### Serial Monitor Showing Connected State with IP Address
-![Serial Monitor Connected State](assets/serial_monitor.png)
+![Serial Monitor Connected State](https://raw.githubusercontent.com/mccdz1/BCA188-Lab9-ESP32-WiFi-Manager/07c9029853aa3eb5aff6ca4a8f6ff909868b004b/assets/serial_monitor.png)
 
 ---
 
