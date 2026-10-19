@@ -35,15 +35,15 @@
 
 ## 4. Verification Screenshots
 
-### Screenshot 1: Captive Portal Setup Page on Phone
-*Accessing the configuration portal at `http://192.168.4.1` on smartphone browser:*  
-![Phone Setup Page](assets/setup_portal_phone.png)
+### Screenshot 1: Serial Monitor Showing Connected State with IP Address
+*Arduino IDE Serial Monitor displaying successful Wi-Fi connection, SSID (`Carolynternet`), assigned IP address (`192.168.1.121`), and signal strength:*  
+![Serial Monitor Connected State](assets/serial_monitor.png)
 
 ---
 
-### Screenshot 2: Serial Monitor Connected State & Reset Trigger
-*Arduino IDE Serial Monitor displaying button hold detection, NVS memory erase, reboot, and successful connection:*  
-![Serial Monitor Output](assets/serial_monitor.png)
+### Screenshot 2: Setup Page on Phone
+*Phone browser accessing the WiFiManager captive portal at `http://192.168.4.1` on `BCA188-ESP32-XX`:*  
+![Phone Setup Page](assets/setup_portal_phone.png)
 
 ---
 
