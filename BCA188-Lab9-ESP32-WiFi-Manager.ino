@@ -1,29 +1,17 @@
-/*
-  Laboratory Activity 9: ESP32 Wi-Fi Manager (Individual)
-  Course: BCA188 (AY26-27 JFV)
-  Student: Michael Cadiz
-  Microcontroller Target: ESP32-S3-N16R8 (16MB Octal Flash, 8MB Octal PSRAM)
-*/
-
 #include <WiFi.h>
-#include <WiFiManager.h> // WiFiManager by tzapu
+#include <WiFiManager.h>
 
-// ---------------- Pin Definitions ----------------
-#define ONBOARD_BOOT_PIN 0  // Built-in BOOT button (wired internally to GPIO 0)
-#define EXTERNAL_BTN_PIN 4  // Optional Breadboard button (wired to Pin 4 / IO4)
-#define STATUS_LED_PIN   2  // Optional Status LED (wired to Pin 2 / IO2)
+#define ONBOARD_BOOT_PIN 0 
+#define EXTERNAL_BTN_PIN 4  // Optional
+#define STATUS_LED_PIN   2
 
-// ---------------- Network Name -------------------
-// Network SSID prefix followed by student identifier
-const char* AP_SSID = "BCA188-ESP32-XX"; 
+const char* AP_SSID = "BCA188-ESP32-99"; 
 
 WiFiManager wm;
 
-// Variables for 3-second button hold detection
 unsigned long buttonPressStartTime = 0;
 bool isButtonPressed = false;
 
-// Helper to check if either the onboard BOOT or breadboard button is pressed
 bool isButtonPressedNow() {
   return (digitalRead(ONBOARD_BOOT_PIN) == LOW || digitalRead(EXTERNAL_BTN_PIN) == LOW);
 }
@@ -44,7 +32,6 @@ void setup() {
   pinMode(STATUS_LED_PIN, OUTPUT);
   digitalWrite(STATUS_LED_PIN, LOW);
 
-  // Lab Requirement: 180-second portal timeout so a wrong password never gets stuck
   wm.setConfigPortalTimeout(180);
 
   Serial.printf("[INFO] Starting WiFiManager AP: '%s'\n", AP_SSID);
@@ -52,8 +39,6 @@ void setup() {
 
   digitalWrite(STATUS_LED_PIN, HIGH);
 
-  // autoConnect attempts to connect to saved Wi-Fi.
-  // If no credentials exist or connection fails, it launches AP mode.
   bool isConnected = wm.autoConnect(AP_SSID);
 
   if (!isConnected) {
@@ -108,7 +93,7 @@ void loop() {
     if (isButtonPressed) {
       isButtonPressed = false;
       Serial.println("[BTN] Released early. Reset cancelled.");
-      digitalWrite(STATUS_LED_PIN, HIGH); // Restore solid ON
+      digitalWrite(STATUS_LED_PIN, HIGH);
     }
   }
 
