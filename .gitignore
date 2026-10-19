@@ -1,0 +1,11 @@
+# Compiled Arduino binaries
+*.bin
+*.elf
+*.hex
+*.o
+*.d
+build/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
